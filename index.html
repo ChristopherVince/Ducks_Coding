@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doble ruta — React (componentes) · Coding Ducks</title>
+<style>
+  /* Estilos específicos de la dirección B (Doble ruta) */
+  .splitHero{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center;}
+  .routeCard{position:relative;cursor:pointer;transition:transform .12s;}
+  .routeCard:hover{transform:translate(-1px,-2px);}
+  .routeCard.dim{opacity:.5;}
+  .routeCard.sel{outline:3px solid var(--accent-ink);outline-offset:3px;}
+  .routeCard .badge{position:absolute;top:-14px;left:20px;}
+  .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch;}
+  .ba .col{display:flex;flex-direction:column;gap:10px;}
+  .ba .vs{display:flex;align-items:center;justify-content:center;font-family:var(--scrawl);font-weight:800;font-size:34px;color:var(--ink-soft);}
+  .twoTrack{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .twoTrack .track{transition:opacity .15s,transform .15s;}
+  .twoTrack .track.dim{opacity:.45;}
+  .timeline{position:relative;padding-left:34px;}
+  .timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:repeating-linear-gradient(var(--line) 0 8px,transparent 8px 16px);}
+  .timeline .step{position:relative;margin-bottom:20px;}
+  .timeline .step::before{content:"";position:absolute;left:-30px;top:4px;width:18px;height:18px;border:2.5px solid var(--line);border-radius:50%;background:var(--accent);}
+  .formRail{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:start;}
+  .formRail .stickyform{position:sticky;top:88px;}
+  .seg{display:flex;gap:4px;border:2.5px solid var(--line);border-radius:30px;padding:4px;}
+  .seg button{font-family:var(--hand);font-size:15px;border:none;background:transparent;cursor:pointer;border-radius:24px;padding:5px 14px;color:var(--ink);}
+  .seg button.on{background:var(--accent);}
+  .faqItem{cursor:pointer;}
+  .faqItem .ans{overflow:hidden;max-height:0;transition:max-height .22s ease;}
+  .faqItem.open .ans{max-height:200px;}
+  .faqItem .tgl{font-family:var(--mono);font-size:20px;transition:transform .2s;}
+  .faqItem.open .tgl{transform:rotate(45deg);}
+  .ctrl input,.ctrl textarea,.ctrl select{border:none;background:transparent;width:100%;height:100%;font-family:var(--hand);font-size:16px;color:var(--ink);outline:none;resize:none;}
+  .ctrl input::placeholder,.ctrl textarea::placeholder{color:var(--ink-soft);}
+  @media(max-width:860px){.splitHero,.twoTrack,.formRail{grid-template-columns:1fr;}.formRail .stickyform{position:static;}.ba{grid-template-columns:1fr;}.ba .vs{transform:rotate(90deg);}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
