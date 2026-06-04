@@ -1,7 +1,10 @@
+import { Code2 } from 'lucide-react';
+
 export function Brand({ size = 26 }) {
   return (
-    <div className="wf-brand" style={{ fontSize: size }}>
-      <span className="duck">🦆</span> Coding Ducks
+    <div className="wf-brand" style={{ fontSize: size, display: 'flex', alignItems: 'center', gap: 8 }}>
+      <Code2 size={size * 0.85} strokeWidth={2.2} />
+      Coding Ducks
     </div>
   );
 }
