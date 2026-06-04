@@ -4,7 +4,8 @@ import {
   Zap, Bot, Link2, RefreshCw,
   ShieldCheck, MapPin, Gift, CheckCircle2,
 } from 'lucide-react';
-import { TRACKS, BEFORE, AFTER, STEPS, FAQS, PROJECTS, SERVICE_OPTIONS, BUDGET_OPTIONS } from './data.js';
+import { TRACKS, BEFORE, AFTER, STEPS, FAQS, SERVICE_OPTIONS, BUDGET_OPTIONS } from './data.js';
+import { PROJECTS } from './projectsLoader.js';
 import { Brand, Logo, Lines, Field } from './ui.jsx';
 import fotoEquipo from './assets/talent.png';
 

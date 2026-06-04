@@ -1,5 +1,5 @@
 import { ArrowLeft } from 'lucide-react';
-import { PROJECTS } from './data.js';
+import { PROJECTS } from './projectsLoader.js';
 import { Brand } from './ui.jsx';
 
 export default function ProjectsPage({ onBack }) {
