@@ -153,12 +153,33 @@ export function Process() {
   );
 }
 
+const WORKER_URL = 'https://codingduckworker.ducks-coding-e.workers.dev';
+
 export function LeadForm() {
   const empty = { nombre: '', email: '', empresa: '', tel: '', servicio: '', presupuesto: '', msg: '' };
   const [f, setF] = useState(empty);
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const set = k => e => setF(s => ({ ...s, [k]: e.target.value }));
-  const submit = e => { e.preventDefault(); setSent(true); };
+  const submit = async e => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    try {
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(f),
+      });
+      if (!res.ok) throw new Error('Error al enviar');
+      setSent(true);
+    } catch {
+      setError('Hubo un problema al enviar. Intenta de nuevo.');
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <section className="wf-section" id="form">
       <div className="wf-wrap formRail">
@@ -210,7 +231,10 @@ export function LeadForm() {
               <Field label="Tipo de servicio" select placeholder="Selecciona…" value={f.servicio} onChange={set('servicio')} options={SERVICE_OPTIONS} />
               <Field label="Presupuesto" select placeholder="Rango…" value={f.presupuesto} onChange={set('presupuesto')} options={BUDGET_OPTIONS} />
               <Field label="Mensaje" area placeholder="Tu proyecto…" value={f.msg} onChange={set('msg')} />
-              <button type="submit" className="wf-btn primary" style={{ width: '100%', justifyContent: 'center' }}>Enviar →</button>
+              {error && <p style={{ color: 'red', fontSize: '0.875rem' }}>{error}</p>}
+              <button type="submit" className="wf-btn primary" style={{ width: '100%', justifyContent: 'center' }} disabled={loading}>
+                {loading ? 'Enviando…' : 'Enviar →'}
+              </button>
             </>
           )}
         </form>
