@@ -14,7 +14,7 @@ export default function App() {
     <>
       <Nav route={route} setRoute={setRoute} />
       <Hero route={route} setRoute={setRoute} />
-      <LogoBand />
+      <LogoBand  />
       <BeforeAfter />
       <Services route={route} />
       <Process />
