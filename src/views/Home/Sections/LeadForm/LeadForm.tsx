@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Clock, Gift, ShieldCheck, MapPin, CheckCircle2 } from "lucide-react";
 
 import { Field } from "../../../../ui";
-import { SERVICE_OPTIONS, BUDGET_OPTIONS } from "../../../../data.js";
+import { SERVICE_OPTIONS } from "../../../../data.js";
 
 const WORKER_URL = "https://codingduckworker.ducks-coding-e.workers.dev";
 
@@ -157,7 +157,7 @@ export default  function LeadForm() {
               <Field
                 label="Teléfono"
                 type="tel"
-                placeholder="+34 ..."
+                placeholder="+52 ..."
                 value={f.tel}
                 onChange={handleChange("tel")}
                 area={false}
@@ -175,11 +175,11 @@ export default  function LeadForm() {
 
               <Field
                 label="Presupuesto"
-                select
-                placeholder="Rango…"
+                placeholder="Tu presupuesto estimado"
                 value={f.presupuesto}
                 onChange={handleChange("presupuesto")}
-                options={BUDGET_OPTIONS}
+                area={false}
+                select={false}
               />
 
               <Field
