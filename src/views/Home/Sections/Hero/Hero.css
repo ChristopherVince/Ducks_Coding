@@ -1,0 +1,36 @@
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* cards */
+.routeCard {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.routeCard:hover {
+  transform: translateY(-2px);
+}
+
+/* active state */
+.routeCard.sel {
+  border-color: var(--accent-ink);
+}
+
+/* inactive state */
+.routeCard.dim {
+  opacity: 0.6;
+}
+
+/* spacing helper */
+.mt8 {
+  margin-top: 8px;
+}
+
+/* badge variation */
+.badgeLight {
+  background: var(--paper);
+}

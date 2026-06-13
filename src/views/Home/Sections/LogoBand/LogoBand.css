@@ -1,0 +1,10 @@
+.logo-band {
+  padding: 22px 0;
+  border-bottom: 2.5px solid var(--line);
+  background: var(--paper-2);
+}
+
+.logo-band__inner {
+  justify-content: center;
+  gap: 14px;
+}

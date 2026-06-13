@@ -8,6 +8,8 @@ export const TRACKS = {
     items: ['Modernización de sistemas legacy', 'Migración cloud a gran escala', 'Integraciones & APIs', 'Datos, IA & equipos dedicados'],
   },
 };
+type Option = string;
+type BudgetOption = string;
 
 export const BEFORE = [
   ['Sistemas anticuados', 'Lentos, frágiles, caros de mantener.'],
@@ -37,5 +39,14 @@ export const FAQS = [
   ['¿Puedo empezar pequeño e ir creciendo?', 'Siempre. Empezamos por lo que más te duele y crecemos contigo, entregando valor en cada fase.'],
 ];
 
-export const SERVICE_OPTIONS = ['Página web / Landing page', 'Tienda online', 'Dashboard / Panel de control', 'App a medida', 'Automatización', 'Consultoría'];
-export const BUDGET_OPTIONS = ['< 1.000 €', '1.000 – 5.000 €', '5.000 – 15.000 €', '> 15.000 €'];
+
+export const SERVICE_OPTIONS = [
+  "Página web / Landing page",
+  "Tienda online",
+  "Dashboard / Panel de control",
+  "App a medida",
+  "Automatización",
+  "Consultoría",
+];
+
+export const BUDGET_OPTIONS: BudgetOption[] = ['< 1.000 €', '1.000 / 5.000 €', '5.000 / 15.000 €', '> 15.000 €'];

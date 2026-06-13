@@ -1,0 +1,156 @@
+/* BeforeAfter.css — scoped styles extracted from Coding Ducks shared stylesheet */
+
+.before-after-section {
+  padding: 64px 0;
+  border-bottom: 2.5px dashed rgba(42, 40, 36, 0.22);
+}
+
+.before-after-section:last-of-type {
+  border-bottom: none;
+}
+
+.before-after-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.before-after-header {
+  text-align: center;
+}
+
+.before-after-header .wf-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- BA grid layout ---- */
+
+.ba {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 38px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.vs {
+  font-family: var(--mono);
+  color: var(--ink-soft);
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 52px; /* align with first card */
+}
+
+/* ---- Label header cards ---- */
+
+.ba-label {
+  border: 2.5px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-align: center;
+  box-shadow: none;
+}
+
+.ba-label--before {
+  background: var(--paper-2);
+}
+
+.ba-label--after {
+  background: var(--accent);
+}
+
+/* ---- Item title row ---- */
+
+.ba-item-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ba-icon {
+  flex-shrink: 0;
+}
+
+.ba-icon--before {
+  color: var(--ink-soft);
+}
+
+.ba-icon--after {
+  color: var(--accent-ink);
+}
+
+/* ---- Shared primitives used by BeforeAfter ---- */
+
+.wf-kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+
+.wf-h2 {
+  font-family: var(--scrawl);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  font-size: clamp(28px, 3.8vw, 42px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+.wf-h3 {
+  font-family: var(--scrawl);
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.wf-muted {
+  color: var(--ink-soft);
+}
+
+.wf-box {
+  border: 2.5px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: 3px 4px 0 rgba(42, 40, 36, 0.16);
+  padding: 22px;
+}
+
+.wf-box.flat {
+  box-shadow: none;
+}
+
+.squiggle {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='10'%3E%3Cpath d='M0 6 Q10 0 20 6 T40 6 T60 6 T80 6' fill='none' stroke='%232f5fd0' stroke-width='2.4'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: auto 8px;
+  padding-bottom: 8px;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 860px) {
+  .before-after-section {
+    padding: 46px 0;
+  }
+
+  .ba {
+    grid-template-columns: 1fr;
+  }
+
+  .vs {
+    padding-top: 0;
+  }
+}
