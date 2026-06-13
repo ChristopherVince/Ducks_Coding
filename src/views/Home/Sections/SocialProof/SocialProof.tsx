@@ -1,7 +1,7 @@
 import "./SocialProof.css";
-import { PROJECTS } from "../../../../projectsLoader.js";
+import { PROJECTS } from "../../../../projectsLoader";
 
-export default function SocialProof({ /*setPage*/ }) {
+export default function SocialProof({ setPage }: { setPage: (page: string) => void }) {
   return (
     <section className="wf-section social-proof" id="proyectos">
       <div className="wf-wrap">
@@ -30,7 +30,7 @@ export default function SocialProof({ /*setPage*/ }) {
           ))}
         </div>
         <div className="wf-center mt-lg">
-          <button /*className="wf-btn mark" onClick={() => setPage("projects")}*/>
+          <button className="wf-btn mark" onClick={() => setPage("projects")}>
             Ver todos los proyectos →
           </button>
         </div>

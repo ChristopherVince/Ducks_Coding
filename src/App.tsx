@@ -1,6 +1,6 @@
 import { useState } from 'react';
 // import { Nav, Hero, LogoBand, BeforeAfter, Services, Process, LeadForm, SocialProof, Faq, About, Footer } from './sections.js';
-import ProjectsPage from './ProjectsPage.js';
+import ProjectsPage from './ProjectsPage';
 import Home from './views/Home/Home';
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <Home/>
+      <Home setPage={setPage} />
       
     </>
   );

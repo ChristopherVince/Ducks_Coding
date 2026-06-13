@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FAQS } from "../../../../data.js";
+import { FAQS } from "../../../../data";
 import "./Faq.css";
 
 export  default function Faq() {

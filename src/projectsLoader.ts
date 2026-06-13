@@ -5,12 +5,11 @@ type Project = {
   desc: string;
   tag: string;
   tech: string[];
-  default: {
-    year: number;
-  };
+  author?: string[];
+  link?: string | null;
 };
 const modules = import.meta.glob("./projects/*.ts", { eager: true });
 
-export const PROJECTS = Object.values(modules)
-  .map((m) => (m as { default: Project }).default)
+export const PROJECTS: Project[] = Object.entries(modules)
+  .map(([path, m]) => ({ ...(m as { default: Omit<Project, 'id'> }).default, id: path }))
   .sort((a, b) => b.year - a.year);

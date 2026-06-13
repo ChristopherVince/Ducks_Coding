@@ -1,7 +1,7 @@
 
 import "./Home.css";
-import About from "./Sections/About/About.js";
-import Faq from "./Sections/Faq/Faq.js";
+import About from "./Sections/About/About";
+import Faq from "./Sections/Faq/Faq";
 import LeadForm from "./Sections/LeadForm/LeadForm";
 import LogoBand from "./Sections/LogoBand/LogoBand";
 import Process from "./Sections/Process/Process";
@@ -12,7 +12,7 @@ import Hero from "./Sections/Hero/Hero";
 import { useState } from "react";
 
 type Route = "pyme" | "enterprise";
-export default function Home() {
+export default function Home({ setPage }: { setPage: (page: string) => void }) {
   const [route, setRoute ] = useState<Route>("pyme");
   return (
     <div className="home">
@@ -22,7 +22,7 @@ export default function Home() {
       <Services route={route} />
       <Process />
       <LeadForm />
-      <SocialProof />
+      <SocialProof setPage={setPage} />
       <Faq />
       <About />
     </div>

@@ -1,6 +1,6 @@
 import "./Process.css";
 
-const STEPS: [string, string][] = [];
+import { STEPS } from "../../../../data";
 
 export default function Process() {
   return (
