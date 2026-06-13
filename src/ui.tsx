@@ -1,3 +1,4 @@
+import React from 'react';
 import { Code2 } from 'lucide-react';
 
 export function Brand({ size = 26 }) {
@@ -17,7 +18,31 @@ export function Lines({ short }) {
   return <div className={"wf-lines" + (short ? " short" : "")}><i></i><i></i><i></i></div>;
 }
 
-export function Field({ label, type = 'text', placeholder, value, onChange, area, select, options = [] }) {
+interface FieldProps {
+  label: string;
+  type?: string;
+  placeholder?: string;
+  value: string;
+  onChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
+  area?: boolean;
+  select?: boolean;
+  options?: string[];
+}
+
+export function Field({
+  label,
+  type = 'text',
+  placeholder,
+  value,
+  onChange,
+  area,
+  select,
+  options = []
+}: FieldProps) {
   return (
     <div className="wf-field">
       <label>{label}</label>
