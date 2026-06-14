@@ -1,0 +1,54 @@
+/* Process.css — extraído de Coding Ducks shared CSS */
+
+.wf-section {
+  padding: 64px 0;
+  border-bottom: 2.5px dashed rgba(42, 40, 36, 0.22);
+}
+.wf-section:last-of-type {
+  border-bottom: none;
+}
+
+.wf-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.wf-kicker {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+
+.wf-h2 {
+  font-family: var(--scrawl);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  font-size: clamp(28px, 3.8vw, 42px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+.wf-h3 {
+  font-family: var(--scrawl);
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.wf-muted {
+  color: var(--ink-soft);
+}
+
+.mt-lg {
+  margin-top: 38px;
+}
+
+@media (max-width: 860px) {
+  .wf-section {
+    padding: 46px 0;
+  }
+}

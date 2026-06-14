@@ -1,0 +1,36 @@
+.faqGrid {
+  align-items: start;
+}
+
+.faqItem {
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+/* header */
+.faqHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* toggle icon */
+.tgl {
+  font-family: var(--mono);
+  font-size: 18px;
+  color: var(--ink-soft);
+}
+
+/* answer container */
+.ans {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, margin-top 0.25s ease;
+}
+
+/* open state */
+.faqItem.open .ans {
+  max-height: 200px;
+  margin-top: 8px;
+}

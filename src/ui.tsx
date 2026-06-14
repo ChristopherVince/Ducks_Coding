@@ -1,26 +1,48 @@
-/* ============================================================
-   ui.jsx — Primitivos reutilizables del kit wireframe
-   (Brand, Logo, Lines, Field). Se exponen en window.
-   ============================================================ */
+import React from 'react';
+import { Code2 } from 'lucide-react';
 
-function Brand({ size = 26 }) {
+export function Brand({ size = 26 }) {
   return (
-    <div className="wf-brand" style={{ fontSize: size }}>
-      <span className="duck">🦆</span> Coding Ducks
+    <div className="wf-brand" style={{ fontSize: size, display: 'flex', alignItems: 'center', gap: 8 }}>
+      <Code2 size={size * 0.85} strokeWidth={2.2} />
+      Coding Ducks
     </div>
   );
 }
 
-function Logo({ children }) {
+export function Logo({ children }) {
   return <div className="wf-logo">{children}</div>;
 }
 
-function Lines({ short }) {
+export function Lines({ short }) {
   return <div className={"wf-lines" + (short ? " short" : "")}><i></i><i></i><i></i></div>;
 }
 
-/* Campo de formulario controlado: input / textarea / select */
-function Field({ label, type = 'text', placeholder, value, onChange, area, select, options = [] }) {
+interface FieldProps {
+  label: string;
+  type?: string;
+  placeholder?: string;
+  value: string;
+  onChange: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
+  area?: boolean;
+  select?: boolean;
+  options?: string[];
+}
+
+export function Field({
+  label,
+  type = 'text',
+  placeholder,
+  value,
+  onChange,
+  area,
+  select,
+  options = []
+}: FieldProps) {
   return (
     <div className="wf-field">
       <label>{label}</label>
@@ -39,5 +61,3 @@ function Field({ label, type = 'text', placeholder, value, onChange, area, selec
     </div>
   );
 }
-
-Object.assign(window, { Brand, Logo, Lines, Field });
