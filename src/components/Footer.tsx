@@ -1,6 +1,5 @@
 import "./Footer.css";
 import { Mail, MessageCircle, Globe } from "lucide-react";
-import { Brand } from "../ui";
 import {
   BRAND_NAME,
   EMAIL,

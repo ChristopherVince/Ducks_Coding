@@ -1,6 +1,8 @@
 import "./Services.css";
-import {TRACKS } from "../../../../data";
-export default function Services({ route }: { route: string }) {
+import { TRACKS } from "../../../../data";
+import type { Route } from "../../../../types";
+
+export default function Services({ route }: { route: Route }) {
   return (
     <section
       className="wf-section services"

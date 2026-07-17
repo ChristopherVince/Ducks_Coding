@@ -8,31 +8,10 @@ import {
   Bot,
   Link2,
   RefreshCw,
-  ShieldCheck,
-  MapPin,
-  Gift,
-  CheckCircle2,
-  User,
-  Home,
 } from "lucide-react";
+import { BEFORE, AFTER } from "../../../../data";
+
 const BEFORE_ICONS = [AlertTriangle, ClipboardList, Unlink, Clock];
-export const BEFORE = [
-  ['Sistemas anticuados', 'Lentos, frágiles, caros de mantener.'],
-  ['Todo hecho a mano', 'Excel y copia-pega sin fin.'],
-  ['Datos desconectados', 'Nada se habla entre sí.'],
-  ['Sin actualizaciones', 'Problemas técnicos que se acumulan.'],
-];
-
-
-
-export const AFTER = [
-  ['Plataforma moderna', 'Rápida, estable, escalable.'],
-  ['Flujos automatizados', 'El software hace lo repetitivo.'],
-  ['Todo integrado', 'Un solo origen de verdad.'],
-  ['Siempre al día', 'Mejora continua y soporte.'],
-];
-
-
 const AFTER_ICONS = [Zap, Bot, Link2, RefreshCw];
 
 export default function BeforeAfter() {

@@ -36,6 +36,13 @@ interface FieldProps {
   options?: string[];
 }
 
+function slugify(label: string): string {
+  return label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
 export function Field({
   label,
   type = 'text',
@@ -47,19 +54,20 @@ export function Field({
   required,
   options = []
 }: FieldProps) {
+  const id = `field-${slugify(label)}`;
   return (
     <div className="wf-field">
-      <label>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <div className={"ctrl" + (area ? ' area' : '') + (select ? ' select' : '')}>
         {area ? (
-          <textarea placeholder={placeholder} value={value} onChange={onChange} required={required}></textarea>
+          <textarea id={id} placeholder={placeholder} value={value} onChange={onChange} required={required}></textarea>
         ) : select ? (
-          <select value={value} onChange={onChange} required={required}>
+          <select id={id} value={value} onChange={onChange} required={required}>
             <option value="">{placeholder}</option>
             {options.map(o => <option key={o}>{o}</option>)}
           </select>
         ) : (
-          <input type={type} placeholder={placeholder} value={value} onChange={onChange} required={required} />
+          <input id={id} type={type} placeholder={placeholder} value={value} onChange={onChange} required={required} />
         )}
       </div>
     </div>
