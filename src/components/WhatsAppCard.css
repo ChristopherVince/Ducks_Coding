@@ -1,0 +1,84 @@
+/* WhatsAppCard — mobile-first */
+
+.wa {
+  border: 2.5px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: 3px 4px 0 rgba(49, 46, 129, 0.16);
+  padding: 22px;
+  margin-top: 22px;
+}
+
+.wa__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wa__copy { flex: 1; }
+
+.wa__chip { margin-bottom: 10px; }
+
+.wa__title { margin-bottom: 6px; }
+
+.wa__text {
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.wa__btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.wa__number {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+/* ---- QR ---- */
+.wa__qr {
+  display: none; /* mobile: el botón ya abre el chat, el QR no aporta */
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.wa__qrFrame {
+  width: 128px;
+  height: 128px;
+  padding: 10px;
+  border: 2.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+}
+
+.wa__qrHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ---- Tablet / desktop: QR visible al lado ---- */
+@media (min-width: 620px) {
+  .wa__body {
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .wa__qr { display: flex; }
+
+  .wa__btn { width: auto; }
+
+  .wa__number { text-align: left; }
+}

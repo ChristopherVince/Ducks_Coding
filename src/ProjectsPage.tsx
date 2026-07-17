@@ -1,23 +1,15 @@
-import { ArrowLeft } from 'lucide-react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import { PROJECTS } from './projectsLoader';
-import { Brand } from './ui.js';
 
-export default function ProjectsPage({ onBack }) {
+type ProjectsPageProps = {
+  onBack: () => void;
+};
+
+export default function ProjectsPage({ onBack }: ProjectsPageProps) {
   return (
     <div>
-      <nav className="wf-nav">
-        <div className="wf-wrap wf-row" style={{ width: '100%', flexWrap: 'nowrap' }}>
-          <Brand />
-          <div className="spacer"></div>
-          <button
-            className="wf-btn sm"
-            onClick={onBack}
-            style={{ display: 'flex', alignItems: 'center', gap: 6 }}
-          >
-            <ArrowLeft size={15} strokeWidth={2.2} /> Volver al inicio
-          </button>
-        </div>
-      </nav>
+      <Navbar onBack={onBack} />
 
       <header className="wf-section">
         <div className="wf-wrap" style={{ maxWidth: 760 }}>
@@ -61,14 +53,7 @@ export default function ProjectsPage({ onBack }) {
         </div>
       </section>
 
-      <footer className="wf-foot">
-        <div className="wf-wrap wf-row" style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-          <Brand size={22} />
-          <button className="wf-btn sm" onClick={onBack} style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <ArrowLeft size={14} strokeWidth={2.2} /> Inicio
-          </button>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

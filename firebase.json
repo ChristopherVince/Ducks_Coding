@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ducks-systems",
     "public": "dist",
     "ignore": [
       "firebase.json",

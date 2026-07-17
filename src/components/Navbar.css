@@ -1,0 +1,138 @@
+/* Navbar — mobile-first, sticky */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(6px);
+  border-bottom: 2.5px solid var(--line);
+}
+
+.nav__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav__brandBtn {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav__spacer { flex: 1; }
+
+.nav__back { flex-shrink: 0; }
+
+/* ---- Menú ---- */
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav__link {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+.nav__link:hover { color: var(--ink); }
+
+.nav__cta { flex-shrink: 0; }
+
+/* WhatsApp: solo en el menú móvil — en escritorio el nav ya va lleno
+   y el contacto vive en la sección de formulario y el footer. */
+.nav__wa {
+  justify-content: center;
+  background: var(--accent);
+}
+/* .nav__ prefijo doble: varias secciones redefinen .wf-btn{display:inline-flex}
+   y se cargan después, así que hace falta más especificidad para ganar. */
+@media (min-width: 821px) {
+  .nav .nav__wa { display: none; }
+}
+
+/* segmented toggle */
+.seg {
+  display: flex;
+  gap: 4px;
+  border: 2.5px solid var(--line);
+  border-radius: 30px;
+  padding: 4px;
+}
+.seg button {
+  font-family: var(--hand);
+  font-size: 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 24px;
+  padding: 6px 14px;
+  color: var(--ink);
+  transition: background 0.15s ease;
+}
+.seg button.on { background: var(--accent); font-weight: 600; }
+
+/* hamburger — hidden on desktop */
+.nav__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 2.5px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 820px) {
+  .nav__toggle { display: inline-flex; }
+
+  .nav__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 20px;
+    background: var(--paper);
+    border-bottom: 2.5px solid var(--line);
+    box-shadow: 0 10px 20px rgba(49, 46, 129, 0.12);
+
+    /* animación de apertura */
+    transform-origin: top;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  .nav__menu--open {
+    max-height: 420px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__link { font-size: 18px; padding: 4px 0; }
+
+  .nav__seg { align-self: flex-start; }
+
+  .nav__cta { justify-content: center; }
+}

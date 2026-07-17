@@ -17,9 +17,7 @@ export default function Services({ route }: { route: string }) {
               className={"wf-box track " + (route === key ? "" : "dim")}
               key={key}
             >
-              <span className={"wf-chip" + (key === "pyme" ? " mark" : "")}>
-                {t.chip}
-              </span>
+              <span className="wf-chip">{t.chip}</span>
               <div className="wf-stack mt">
                 {t.items.map((it) => (
                   <div className="wf-row gap-sm" key={it}>

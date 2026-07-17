@@ -3,9 +3,12 @@ import { useState } from "react";
 import { Clock, Gift, ShieldCheck, MapPin, CheckCircle2 } from "lucide-react";
 
 import { Field } from "../../../../ui";
+import WhatsAppCard from "../../../../components/WhatsAppCard";
 import { SERVICE_OPTIONS } from "../../../../data.js";
 
-const WORKER_URL = "https://codingduckworker.ducks-coding-e.workers.dev";
+const WORKER_URL =
+  import.meta.env.VITE_WORKER_URL ??
+  "https://codingduckworker.ducks-coding-e.workers.dev";
 
 export default  function LeadForm() {
   const empty = {
@@ -14,7 +17,6 @@ export default  function LeadForm() {
     empresa: "",
     tel: "",
     servicio: "",
-    presupuesto: "",
     msg: "",
   };
 
@@ -98,6 +100,8 @@ export default  function LeadForm() {
               <p className="wf-muted">Equipo de la zona</p>
             </div>
           </div>
+
+          <WhatsAppCard />
         </div>
 
         <form className="wf-box lead-form" onSubmit={submit}>
@@ -131,6 +135,7 @@ export default  function LeadForm() {
                 placeholder="Nombre"
                 value={f.nombre}
                 onChange={handleChange("nombre")}
+                required
                 area={false}
                 select={false}
               />
@@ -141,13 +146,14 @@ export default  function LeadForm() {
                 placeholder="tu@empresa.com"
                 value={f.email}
                 onChange={handleChange("email")}
+                required
                 area={false}
                 select={false}
               />
 
               <Field
-                label="Empresa"
-                placeholder="Empresa"
+                label="Nombre del negocio o empresa"
+                placeholder="Nombre del negocio o empresa"
                 value={f.empresa}
                 onChange={handleChange("empresa")}
                 area={false}
@@ -171,15 +177,6 @@ export default  function LeadForm() {
                 value={f.servicio}
                 onChange={handleChange("servicio")}
                 options={SERVICE_OPTIONS}
-              />
-
-              <Field
-                label="Presupuesto"
-                placeholder="Tu presupuesto estimado"
-                value={f.presupuesto}
-                onChange={handleChange("presupuesto")}
-                area={false}
-                select={false}
               />
 
               <Field

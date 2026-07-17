@@ -8,8 +8,6 @@ export const TRACKS = {
     items: ['Modernización de sistemas legacy', 'Migración cloud a gran escala', 'Integraciones & APIs', 'Datos, IA & equipos dedicados'],
   },
 };
-type Option = string;
-type BudgetOption = string;
 
 export const BEFORE = [
   ['Sistemas anticuados', 'Lentos, frágiles, caros de mantener.'],
@@ -47,6 +45,5 @@ export const SERVICE_OPTIONS = [
   "App a medida",
   "Automatización",
   "Consultoría",
+  "Otro",
 ];
-
-export const BUDGET_OPTIONS: BudgetOption[] = ['< 1.000 €', '1.000 / 5.000 €', '5.000 / 15.000 €', '> 15.000 €'];

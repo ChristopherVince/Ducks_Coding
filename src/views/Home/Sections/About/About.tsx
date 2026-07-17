@@ -1,15 +1,13 @@
 import "./About.css";
+import logoUrl from "../../../../assets/ducks-systems-principal-horizontal.svg";
+import { BRAND_NAME } from "../../../../site";
 
 export default function About() {
   return (
     <section className="about-section" id="nosotros">
       <div className="about-wrap">
-        <div className="about-img">
-          <img
-            // src={fotoEquipo}
-            alt="Nuestro equipo"
-            className="about-img-media"
-          />
+        <div className="about-logo">
+          <img src={logoUrl} alt={BRAND_NAME} className="about-logo-media" />
         </div>
         <div>
           <p className="wf-kicker">Quiénes somos · About</p>

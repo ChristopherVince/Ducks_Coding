@@ -1,14 +1,8 @@
 import "./Hero.css";
-
-// type HeroProps = {
-//   route: "pyme" | "enterprise";
-//   setRoute: (route: "pyme" | "enterprise") => void;
-// };
-
-type Route = "pyme" | "enterprise";
+import type { Route } from "../../../../types";
 
 type HeroProps = {
-  route : Route;
+  route: Route;
   setRoute: (route: Route) => void;
 };
 
@@ -52,7 +46,7 @@ export default function Hero({ route, setRoute }: HeroProps) {
             </p>
 
             <a href="#form" className="wf-btn sm primary mt">
-              Quiero mi proyecto →
+              Empezar diagnóstico →
             </a>
           </div>
 
@@ -73,7 +67,7 @@ export default function Hero({ route, setRoute }: HeroProps) {
             </p>
 
             <a href="#form" className="wf-btn sm mt">
-              Hablar de mi proyecto →
+              Empezar diagnóstico →
             </a>
           </div>
         </div>

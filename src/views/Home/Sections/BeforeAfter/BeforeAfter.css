@@ -1,8 +1,8 @@
-/* BeforeAfter.css — scoped styles extracted from Coding Ducks shared stylesheet */
+/* BeforeAfter.css — scoped styles extracted from Ducks Systems shared stylesheet */
 
 .before-after-section {
   padding: 64px 0;
-  border-bottom: 2.5px dashed rgba(42, 40, 36, 0.22);
+  border-bottom: 2.5px dashed rgba(49, 46, 129, 0.22);
 }
 
 .before-after-section:last-of-type {
@@ -123,7 +123,7 @@
   border: 2.5px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper);
-  box-shadow: 3px 4px 0 rgba(42, 40, 36, 0.16);
+  box-shadow: 3px 4px 0 rgba(49, 46, 129, 0.16);
   padding: 22px;
 }
 
@@ -132,7 +132,7 @@
 }
 
 .squiggle {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='10'%3E%3Cpath d='M0 6 Q10 0 20 6 T40 6 T60 6 T80 6' fill='none' stroke='%232f5fd0' stroke-width='2.4'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='10'%3E%3Cpath d='M0 6 Q10 0 20 6 T40 6 T60 6 T80 6' fill='none' stroke='%236366f1' stroke-width='2.4'/%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: 0 100%;
   background-size: auto 8px;

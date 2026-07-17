@@ -1,5 +1,7 @@
-
 import "./Home.css";
+import { useState } from "react";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import About from "./Sections/About/About";
 import Faq from "./Sections/Faq/Faq";
 import LeadForm from "./Sections/LeadForm/LeadForm";
@@ -9,13 +11,14 @@ import Services from "./Sections/Services/Services";
 import SocialProof from "./Sections/SocialProof/SocialProof";
 import BeforeAfter from "./Sections/BeforeAfter/BeforeAfter";
 import Hero from "./Sections/Hero/Hero";
-import { useState } from "react";
+import type { Route, Page } from "../../types";
 
-type Route = "pyme" | "enterprise";
-export default function Home({ setPage }: { setPage: (page: string) => void }) {
-  const [route, setRoute ] = useState<Route>("pyme");
+export default function Home({ setPage }: { setPage: (page: Page) => void }) {
+  const [route, setRoute] = useState<Route>("pyme");
+
   return (
-    <div className="home">
+    <div className="home" id="top">
+      <Navbar route={route} setRoute={setRoute} />
       <Hero route={route} setRoute={setRoute} />
       <LogoBand />
       <BeforeAfter />
@@ -25,6 +28,7 @@ export default function Home({ setPage }: { setPage: (page: string) => void }) {
       <SocialProof setPage={setPage} />
       <Faq />
       <About />
+      <Footer />
     </div>
   );
 }

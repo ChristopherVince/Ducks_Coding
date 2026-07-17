@@ -1,7 +1,8 @@
 import "./SocialProof.css";
 import { PROJECTS } from "../../../../projectsLoader";
+import type { Page } from "../../../../types";
 
-export default function SocialProof({ setPage }: { setPage: (page: string) => void }) {
+export default function SocialProof({ setPage }: { setPage: (page: Page) => void }) {
   return (
     <section className="wf-section social-proof" id="proyectos">
       <div className="wf-wrap">

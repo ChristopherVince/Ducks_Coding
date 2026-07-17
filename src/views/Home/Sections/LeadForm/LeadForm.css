@@ -1,8 +1,8 @@
-/* LeadForm.css — scoped styles extracted from Coding Ducks shared stylesheet */
+/* LeadForm.css — scoped styles extracted from Ducks Systems shared stylesheet */
 
 .lead-section {
   padding: 64px 0;
-  border-bottom: 2.5px dashed rgba(42, 40, 36, 0.22);
+  border-bottom: 2.5px dashed rgba(49, 46, 129, 0.22);
 }
 
 .lead-section:last-of-type {
@@ -116,7 +116,7 @@
   border: 2.5px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper);
-  box-shadow: 3px 4px 0 rgba(42, 40, 36, 0.16);
+  box-shadow: 3px 4px 0 rgba(49, 46, 129, 0.16);
   padding: 22px;
 }
 
@@ -137,7 +137,7 @@
   color: var(--ink);
   padding: 11px 20px;
   text-decoration: none;
-  box-shadow: 2px 3px 0 rgba(42, 40, 36, 0.18);
+  box-shadow: 2px 3px 0 rgba(49, 46, 129, 0.18);
 }
 
 .wf-btn:active {

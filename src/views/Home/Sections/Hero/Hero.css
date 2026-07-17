@@ -7,8 +7,16 @@
 
 /* cards */
 .routeCard {
+  position: relative;
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* floating badge on the route cards */
+.routeCard .badge {
+  position: absolute;
+  top: -14px;
+  left: 20px;
 }
 
 .routeCard:hover {
@@ -33,4 +41,20 @@
 /* badge variation */
 .badgeLight {
   background: var(--paper);
+}
+
+/* extra top room so the floating badge never clips */
+.hero .wf-stack {
+  margin-top: 14px;
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 820px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+  .hero .wf-stack {
+    margin-top: 22px;
+  }
 }

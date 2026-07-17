@@ -1,8 +1,8 @@
-/* SocialProof.css — extraído de Coding Ducks shared CSS */
+/* SocialProof.css — extraído de Ducks Systems shared CSS */
 
 .wf-section {
   padding: 64px 0;
-  border-bottom: 2.5px dashed rgba(42, 40, 36, 0.22);
+  border-bottom: 2.5px dashed rgba(49, 46, 129, 0.22);
 }
 .wf-section:last-of-type {
   border-bottom: none;
@@ -70,7 +70,7 @@
   border: 2.5px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper);
-  box-shadow: 3px 4px 0 rgba(42, 40, 36, 0.16);
+  box-shadow: 3px 4px 0 rgba(49, 46, 129, 0.16);
   padding: 22px;
 }
 
@@ -136,7 +136,7 @@
   color: var(--ink);
   padding: 11px 20px;
   text-decoration: none;
-  box-shadow: 2px 3px 0 rgba(42, 40, 36, 0.18);
+  box-shadow: 2px 3px 0 rgba(49, 46, 129, 0.18);
 }
 .wf-btn:active {
   transform: translate(2px, 3px);

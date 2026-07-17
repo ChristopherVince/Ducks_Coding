@@ -1,8 +1,8 @@
-/* Services.css — extraído de Coding Ducks shared CSS */
+/* Services.css — extraído de Ducks Systems shared CSS */
 
 .wf-section {
   padding: 64px 0;
-  border-bottom: 2.5px dashed rgba(42, 40, 36, 0.22);
+  border-bottom: 2.5px dashed rgba(49, 46, 129, 0.22);
 }
 .wf-section:last-of-type {
   border-bottom: none;
@@ -56,7 +56,7 @@
   border: 2.5px solid var(--line);
   border-radius: var(--radius);
   background: var(--paper);
-  box-shadow: 3px 4px 0 rgba(42, 40, 36, 0.16);
+  box-shadow: 3px 4px 0 rgba(49, 46, 129, 0.16);
   padding: 22px;
 }
 
@@ -90,8 +90,24 @@
   gap: 10px;
 }
 
+/* ---- Two-track grid ---- */
+.twoTrack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.twoTrack .track {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.twoTrack .track.dim {
+  opacity: 0.45;
+}
+
 @media (max-width: 860px) {
   .wf-section {
     padding: 46px 0;
+  }
+  .twoTrack {
+    grid-template-columns: 1fr;
   }
 }
